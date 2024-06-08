@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             panel1 = new Panel();
             label4 = new Label();
@@ -40,8 +41,10 @@
             iconButton1 = new FontAwesome.Sharp.IconButton();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             label3 = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // iconPictureBox1
@@ -219,12 +222,24 @@
             label3.Text = "v1.0";
             label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.FromArgb(127, 90, 240);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-22, 84);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(343, 294);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 22, 26);
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(label3);
             Controls.Add(iconButton2);
             Controls.Add(iconButton1);
@@ -237,6 +252,7 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -255,5 +271,6 @@
         private CheckBox checkBox1;
         private Label label3;
         private Label label4;
+        private PictureBox pictureBox1;
     }
 }

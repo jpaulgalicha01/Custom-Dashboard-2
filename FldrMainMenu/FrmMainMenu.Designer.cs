@@ -30,9 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainMenu));
-            panel1 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
+            SidePanel = new Panel();
+            MenuPanel = new Panel();
+            FooterPanel = new Panel();
             lblNameUser = new Label();
             reportsPanel = new Panel();
             iconButton38 = new FontAwesome.Sharp.IconButton();
@@ -85,17 +85,17 @@
             entryContainer = new Panel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             btnCompanySetup = new FontAwesome.Sharp.IconButton();
-            panel3 = new Panel();
+            BrandPanel = new Panel();
             pictureBox1 = new PictureBox();
-            panel2 = new Panel();
+            TopPanel = new Panel();
             lblCompanyName = new Label();
             iconButton44 = new FontAwesome.Sharp.IconButton();
             iconButton45 = new FontAwesome.Sharp.IconButton();
             sidebarTimer = new System.Windows.Forms.Timer(components);
             contentPanel = new Panel();
-            panel1.SuspendLayout();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
+            SidePanel.SuspendLayout();
+            MenuPanel.SuspendLayout();
+            FooterPanel.SuspendLayout();
             reportsPanel.SuspendLayout();
             securityPanel.SuspendLayout();
             mandatoryPanel.SuspendLayout();
@@ -104,48 +104,48 @@
             employeePanel.SuspendLayout();
             filePanel.SuspendLayout();
             entryContainer.SuspendLayout();
-            panel3.SuspendLayout();
+            BrandPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
+            TopPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // SidePanel
             // 
-            panel1.BackColor = Color.FromArgb(22, 22, 26);
-            panel1.Controls.Add(panel4);
-            panel1.Controls.Add(panel3);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(200, 788);
-            panel1.TabIndex = 0;
+            SidePanel.BackColor = Color.FromArgb(22, 22, 26);
+            SidePanel.Controls.Add(MenuPanel);
+            SidePanel.Controls.Add(BrandPanel);
+            SidePanel.Dock = DockStyle.Left;
+            SidePanel.Location = new Point(0, 0);
+            SidePanel.Name = "SidePanel";
+            SidePanel.Size = new Size(200, 788);
+            SidePanel.TabIndex = 0;
             // 
-            // panel4
+            // MenuPanel
             // 
-            panel4.AutoScroll = true;
-            panel4.Controls.Add(panel5);
-            panel4.Controls.Add(reportsPanel);
-            panel4.Controls.Add(securityPanel);
-            panel4.Controls.Add(mandatoryPanel);
-            panel4.Controls.Add(loanPanel);
-            panel4.Controls.Add(preparationPanel);
-            panel4.Controls.Add(employeePanel);
-            panel4.Controls.Add(filePanel);
-            panel4.Controls.Add(entryContainer);
-            panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(0, 156);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(200, 632);
-            panel4.TabIndex = 3;
+            MenuPanel.AutoScroll = true;
+            MenuPanel.Controls.Add(FooterPanel);
+            MenuPanel.Controls.Add(reportsPanel);
+            MenuPanel.Controls.Add(securityPanel);
+            MenuPanel.Controls.Add(mandatoryPanel);
+            MenuPanel.Controls.Add(loanPanel);
+            MenuPanel.Controls.Add(preparationPanel);
+            MenuPanel.Controls.Add(employeePanel);
+            MenuPanel.Controls.Add(filePanel);
+            MenuPanel.Controls.Add(entryContainer);
+            MenuPanel.Dock = DockStyle.Fill;
+            MenuPanel.Location = new Point(0, 156);
+            MenuPanel.Name = "MenuPanel";
+            MenuPanel.Size = new Size(200, 632);
+            MenuPanel.TabIndex = 3;
             // 
-            // panel5
+            // FooterPanel
             // 
-            panel5.Controls.Add(lblNameUser);
-            panel5.Dock = DockStyle.Bottom;
-            panel5.Location = new Point(0, 575);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(200, 57);
-            panel5.TabIndex = 15;
+            FooterPanel.Controls.Add(lblNameUser);
+            FooterPanel.Dock = DockStyle.Bottom;
+            FooterPanel.Location = new Point(0, 575);
+            FooterPanel.Name = "FooterPanel";
+            FooterPanel.Size = new Size(200, 57);
+            FooterPanel.TabIndex = 15;
             // 
             // lblNameUser
             // 
@@ -1180,17 +1180,18 @@
             btnCompanySetup.UseVisualStyleBackColor = false;
             btnCompanySetup.Click += btnCompanySetup_Click;
             // 
-            // panel3
+            // BrandPanel
             // 
-            panel3.Controls.Add(pictureBox1);
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(200, 156);
-            panel3.TabIndex = 2;
+            BrandPanel.Controls.Add(pictureBox1);
+            BrandPanel.Dock = DockStyle.Top;
+            BrandPanel.Location = new Point(0, 0);
+            BrandPanel.Name = "BrandPanel";
+            BrandPanel.Size = new Size(200, 156);
+            BrandPanel.TabIndex = 2;
             // 
             // pictureBox1
             // 
+            pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(12, 3);
             pictureBox1.Name = "pictureBox1";
@@ -1198,18 +1199,19 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
-            // panel2
+            // TopPanel
             // 
-            panel2.BackColor = Color.FromArgb(127, 90, 240);
-            panel2.Controls.Add(lblCompanyName);
-            panel2.Controls.Add(iconButton44);
-            panel2.Controls.Add(iconButton45);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(200, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(940, 35);
-            panel2.TabIndex = 1;
+            TopPanel.BackColor = Color.FromArgb(127, 90, 240);
+            TopPanel.Controls.Add(lblCompanyName);
+            TopPanel.Controls.Add(iconButton44);
+            TopPanel.Controls.Add(iconButton45);
+            TopPanel.Dock = DockStyle.Top;
+            TopPanel.Location = new Point(200, 0);
+            TopPanel.Name = "TopPanel";
+            TopPanel.Size = new Size(1180, 35);
+            TopPanel.TabIndex = 1;
             // 
             // lblCompanyName
             // 
@@ -1231,7 +1233,7 @@
             iconButton44.IconColor = Color.FromArgb(255, 255, 254);
             iconButton44.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton44.IconSize = 30;
-            iconButton44.Location = new Point(851, 0);
+            iconButton44.Location = new Point(1091, 0);
             iconButton44.Name = "iconButton44";
             iconButton44.Size = new Size(40, 31);
             iconButton44.TabIndex = 5;
@@ -1247,7 +1249,7 @@
             iconButton45.IconColor = Color.FromArgb(255, 255, 254);
             iconButton45.IconFont = FontAwesome.Sharp.IconFont.Brands;
             iconButton45.IconSize = 30;
-            iconButton45.Location = new Point(897, 0);
+            iconButton45.Location = new Point(1137, 0);
             iconButton45.Name = "iconButton45";
             iconButton45.Size = new Size(40, 31);
             iconButton45.TabIndex = 4;
@@ -1256,7 +1258,7 @@
             // 
             // sidebarTimer
             // 
-            sidebarTimer.Interval = 10;
+            sidebarTimer.Interval = 5;
             sidebarTimer.Tick += sidebarTimer_Tick;
             // 
             // contentPanel
@@ -1264,17 +1266,17 @@
             contentPanel.Dock = DockStyle.Fill;
             contentPanel.Location = new Point(200, 35);
             contentPanel.Name = "contentPanel";
-            contentPanel.Size = new Size(940, 753);
+            contentPanel.Size = new Size(1180, 753);
             contentPanel.TabIndex = 2;
             // 
             // FrmMainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1140, 788);
+            ClientSize = new Size(1380, 788);
             Controls.Add(contentPanel);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(TopPanel);
+            Controls.Add(SidePanel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMainMenu";
             RightToLeft = RightToLeft.No;
@@ -1282,10 +1284,10 @@
             Text = "FrmMainMenu";
             WindowState = FormWindowState.Maximized;
             Load += FrmMainMenu_Load;
-            panel1.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            SidePanel.ResumeLayout(false);
+            MenuPanel.ResumeLayout(false);
+            FooterPanel.ResumeLayout(false);
+            FooterPanel.PerformLayout();
             reportsPanel.ResumeLayout(false);
             securityPanel.ResumeLayout(false);
             mandatoryPanel.ResumeLayout(false);
@@ -1294,20 +1296,20 @@
             employeePanel.ResumeLayout(false);
             filePanel.ResumeLayout(false);
             entryContainer.ResumeLayout(false);
-            panel3.ResumeLayout(false);
+            BrandPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            TopPanel.ResumeLayout(false);
+            TopPanel.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private Panel panel3;
+        private Panel SidePanel;
+        private Panel BrandPanel;
         private PictureBox pictureBox1;
-        private Panel panel2;
-        private Panel panel4;
+        private Panel TopPanel;
+        private Panel MenuPanel;
         private System.Windows.Forms.Timer sidebarTimer;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btnCompanySetup;
@@ -1363,7 +1365,7 @@
         private FontAwesome.Sharp.IconButton iconButton44;
         private FontAwesome.Sharp.IconButton iconButton45;
         private Label lblCompanyName;
-        private Panel panel5;
+        private Panel FooterPanel;
         private Label lblNameUser;
         private Panel contentPanel;
     }

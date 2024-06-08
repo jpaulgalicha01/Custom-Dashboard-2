@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Custom_Dashboard_2.FldFile;
+using Custom_Dashboard_2.FldrClass;
+using Custom_Dashboard_2.FldrEntry;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +16,7 @@ namespace Custom_Dashboard_2.FldrMainMenu
     public partial class FrmMainMenu : Form
     {
         bool sideMenuCollapse;
-        public static Panel PanelName;
+        Panel PanelName = new Panel();
         public FrmMainMenu()
         {
             InitializeComponent();
@@ -21,7 +24,7 @@ namespace Custom_Dashboard_2.FldrMainMenu
 
         private void FrmMainMenu_Load(object sender, EventArgs e)
         {
-
+            showContent(new frmDashboard());
         }
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
@@ -49,6 +52,7 @@ namespace Custom_Dashboard_2.FldrMainMenu
         }
         private void iconButton1_Click(object sender, EventArgs e)
         {
+
             PanelName = entryContainer;
             sidebarTimer.Start();
         }
@@ -109,22 +113,38 @@ namespace Custom_Dashboard_2.FldrMainMenu
 
         private void btnCompanySetup_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Company Name Setup");
+            new ClsOpenForms(new frmCompanySetup());
         }
 
         private void btnLoanSubtitle_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Company Loan Subtitle");
+            //MessageBox.Show("Company Loan Subtitle");
+            showContent(new frmLoanSubtitle());
         }
 
         private void btnDesignation_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Company Designation");
+            showContent(new frmDesignation());
         }
 
         private void btnJobCat_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Company Job Category");
         }
+
+
+
+        private void showContent(UserControl frmName)
+        {
+            contentPanel.Controls.Clear();
+            frmName.Dock = DockStyle.Fill;
+            contentPanel.Controls.Add(frmName);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            showContent(new frmDashboard());
+        }
     }
+
 }
